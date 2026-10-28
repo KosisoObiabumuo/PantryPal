@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="kitchen_wall">#FFF4E0</color>
+    <color name="ink">#2B2D42</color>
+    <color name="ink_soft">#6C6F80</color>
+    <color name="fridge">#8FD3FE</color>
+    <color name="freezer">#D6F1FF</color>
+    <color name="pantry">#FFD166</color>
+    <color name="cabinet">#F4A261</color>
+    <color name="danger">#D62828</color>
+    <color name="warning">#F77F00</color>
+    <color name="ok">#2A9D8F</color>
+    <color name="banner_bg">#FFE3E3</color>
 </resources>

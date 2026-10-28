@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">PantryPal</string>
+    <string-array name="sort_options">
+        <item>Expiry (soonest first)</item>
+        <item>Name (A to Z)</item>
+        <item>Quantity (lowest first)</item>
+    </string-array>
+
+    <string-array name="units">
+        <item>item</item>
+        <item>pack</item>
+        <item>tin</item>
+        <item>bottle</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>ml</item>
+        <item>L</item>
+    </string-array>
 </resources>
