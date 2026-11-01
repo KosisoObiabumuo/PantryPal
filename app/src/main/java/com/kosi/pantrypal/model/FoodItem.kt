@@ -28,7 +28,7 @@ class FoodItem(
         get() = quantity <= lowStockThreshold
     /** Days from today until expiry.*/
     fun daysUntilExpiry(): Long? =
-        expiryDate.let {
+        expiryDate?.let {
             ChronoUnit.DAYS.between(LocalDate.now(), it)
         }
     companion object{

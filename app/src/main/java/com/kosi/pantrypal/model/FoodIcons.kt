@@ -5,7 +5,7 @@ import java.util.Locale
 /** Picks a cartoon icon for a food. Unknown foods get a generic icon for their storage. */
 object FoodIcons {
 
-    // Specific words first: "peanut" before "butter", "lettuce" before "ice".
+
     private val keywords = linkedMapOf(
         "peanut" to "🥜", "peach" to "🍑",
         "milk" to "🥛", "cheese" to "🧀", "cheddar" to "🧀", "mozzarella" to "🧀",
@@ -23,7 +23,7 @@ object FoodIcons {
         "lettuce" to "🥬", "spinach" to "🥬", "salad" to "🥗",
         "corn" to "🌽", "mushroom" to "🍄", "avocado" to "🥑",
         "apple" to "🍎", "banana" to "🍌", "orange" to "🍊", "lemon" to "🍋", "grape" to "🍇",
-        "strawberr" to "🍓", "berr" to "🍓",
+        "strawberry" to "🍓", "berry" to "🍓",
         "juice" to "🧃", "coffee" to "☕", "tea" to "🍵", "water" to "💧",
         "chocolate" to "🍫", "biscuit" to "🍪", "cookie" to "🍪", "cake" to "🍰",
         "honey" to "🍯", "jam" to "🍯", "soup" to "🥫", "bean" to "🥫",

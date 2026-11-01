@@ -1,10 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItemActivity">
+    android:background="@color/kitchen_wall"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/pantry"
+        app:titleTextColor="@color/ink" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_preview_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="72sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_scan"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan barcode" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_name"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Food name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_quantity"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Quantity">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Where does it go?"
+                android:textColor="@color/ink"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_storage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Expiry date"
+                android:textColor="@color/ink"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_expiry"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick expiry date (optional)" />
+
+            <CheckBox
+                android:id="@+id/check_priority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Priority item (always keep in stock, like milk or bread)" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Warn me when I have this many or fewer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_threshold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Contains allergens"
+                android:textColor="@color/ink"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_allergens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Milk" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eggs" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gluten" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nuts" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Peanuts" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Soy" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fish" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Shellfish" />
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sesame" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/game_font"
+                android:text="Save to kitchen"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
