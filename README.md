@@ -1,4 +1,5 @@
 PantryPal
+- Repository: https://github.com/KosisoObiabumuo/PantryPal
 
 PantryPal is an Android app that keeps track of the food in your kitchen: the fridge, freezer, pantry and cupboard. It is built around a playful, Crossy Road style kitchen where every storage opens like the real thing and every item has its own icon.
 
