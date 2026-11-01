@@ -1,4 +1,5 @@
-package com.kosi.pantrypal.model
+package com.kosi.pantrypal.data
+
 
 import com.kosi.pantrypal.model.FoodItem
 import com.kosi.pantrypal.model.StorageType

@@ -1,19 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/kitchen_wall">
 
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="96dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/game_font"
+                android:text="My Kitchen"
+                android:textColor="@color/ink"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap a door to look inside"
+                android:textColor="@color/ink_soft"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_low_stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_banner"
+                android:padding="12dp"
+                android:textColor="@color/danger"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- The kitchen: two columns of doors -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- Left: fridge-freezer -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/tile_freezer"
+                        layout="@layout/item_storage_tile"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp" />
+
+                    <include
+                        android:id="@+id/tile_fridge"
+                        layout="@layout/item_storage_tile"
+                        android:layout_width="match_parent"
+                        android:layout_height="270dp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- Right: wall cupboard above the pantry -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/tile_cabinet"
+                        layout="@layout/item_storage_tile"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+
+                    <include
+                        android:id="@+id/tile_pantry"
+                        layout="@layout/item_storage_tile"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_share_list"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Share shopping list" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="Log food"
+        app:icon="@drawable/ic_add" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
